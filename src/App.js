@@ -2,118 +2,65 @@ import React, { Component } from 'react'
 import HelloWorld from './components/HelloWorld'
 import NavBar from './components/NavBar'
 import CharacterBox from './components/CharacterBox'
+import Footer from './components/Footer'
+
+const characterBoxes = [
+  {
+    imageUrl: 'https://octodex.github.com/images/octobiwan.jpg',
+    caption: '#3',
+    name: 'the Octobi Wan Catnobi by',
+    src: 'https://github.com/cameronmcefee.png'
+  },
+  {
+    imageUrl: 'https://octodex.github.com/images/stormtroopocat.png',
+    caption: '#86',
+    name: 'Stormtroopocat',
+    src: 'https://github.com/jeejkang.png'
+  },
+  {
+    imageUrl: 'https://octodex.github.com/images/doctocat-brown.jpg',
+    caption: '#68',
+    name: 'Doctocat Brown',
+    src: 'https://github.com/jonrohan.png'
+  },
+  {
+    imageUrl: 'https://octodex.github.com/images/octocat-de-los-muertos.jpg',
+    caption: '#56',
+    name: 'Octocat De Los Muertos',
+    src: 'https://github.com/cameronmcefee.png'
+  },
+  {
+    imageUrl: 'https://octodex.github.com/images/dunetocat.png',
+    caption: '#105',
+    name: 'Dunetocat',
+    src: 'https://github.com/JohnCreek.png'
+  },
+  {
+    imageUrl: '',
+    caption: '',
+    name: '',
+    src: ''
+  }
+]
 
 class App extends Component {
   render() {
     return (
       <>
         <NavBar />
-        {/* <nav class="header">
-          <img src="./images/logo (1).png" />
-          <div class="top-links">
-            <a>RSS</a>
-            <a>FAQ</a>
-            <a>Back to GitHub</a>
-          </div>
-        </nav> */}
-
-        <div class="container">
-          <section class="main-body">
-            <CharacterBox
-              imageUrl="https://octodex.github.com/images/octobiwan.jpg"
-              caption="#3"
-              name="the Octobi Wan Catnobi by"
-              src="https://github.com/cameronmcefee.png"
-            />
-            <CharacterBox
-              imageUrl="https://octodex.github.com/images/stormtroopocat.png"
-              caption="#86"
-              name="Stormtroopocat"
-              src="https://github.com/jeejkang.png"
-            />
-            <CharacterBox imageUrl="" />
-
+        <main>
+          <div class="container">
+            {characterBoxes.map(characterBox => {
+              return (
+                <CharacterBox
+                  imageUrl={characterBox.imageUrl}
+                  caption={characterBox.caption}
+                  name={characterBox.name}
+                  src={characterBox.src}
+                />
+              )
+            })}
             {/* <div class="outer-image">
-              <img
-                class="image-area"
-                src=""
-              />
-              <section class="caption">
-                <p>#3</p>
-                <div class="name-pic">
-                  <p>
-                    the <em>Octobi Wan Catnobi</em> by
-                  </p>
-                  <img src="https://github.com/cameronmcefee.png" />
-                </div>
-              </section>
-            </div> */}
-
-            {/* <div class="outer-image">
-              <img
-                class="image-area"
-                src=" https://octodex.github.com/images/stormtroopocat.png"
-              />
-              <section class="caption">
-                <p>#86></p>
-                <div class="name-pic">
-                  <p>
-                    the <em>Stormtroopocat</em> by
-                  </p>
-                  <img src="https://github.com/jeejkang.png" />
-                </div>
-              </section>
-            </div> */}
-
-            <div class="outer-image">
-              <img
-                class="image-area"
-                src="https://octodex.github.com/images/doctocat-brown.jpg"
-              />
-              <section class="caption">
-                <p>#68</p>
-                <div class="name-pic">
-                  <p>
-                    the <em>Doctocat Brown</em> by
-                  </p>
-                  <img src="https://github.com/jonrohan.png" />
-                </div>
-              </section>
-            </div>
-
-            <div class="outer-image">
-              <img
-                class="image-area"
-                src="https://octodex.github.com/images/octocat-de-los-muertos.jpg"
-              />
-              <section class="caption">
-                <p>#56</p>
-                <div class="name-pic">
-                  <p>
-                    the <em>Octocat De Los Muertos</em> by
-                  </p>
-                  <img src="https://github.com/cameronmcefee.png" />
-                </div>
-              </section>
-            </div>
-
-            <div class="outer-image">
-              <img
-                class="image-area"
-                src="https://octodex.github.com/images/dunetocat.png"
-              />
-              <section class="caption">
-                <p>#105</p>
-                <div class="name-pic">
-                  <p>
-                    the <em>Dunetocat</em> by
-                  </p>
-                  <img src="https://github.com/JohnCreek.png" />
-                </div>
-              </section>
-            </div>
-
-            <div class="outer-image">
               <img
                 class="image-area"
                 src="https://octodex.github.com/images/daftpunktocat-thomas.gif"
@@ -128,7 +75,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -144,7 +90,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -160,7 +105,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -176,7 +120,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -193,7 +136,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -207,7 +149,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -221,7 +162,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -235,7 +175,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -249,7 +188,6 @@ class App extends Component {
                 </div>
               </section>
             </div>
-
             <div class="outer-image">
               <img
                 class="image-area"
@@ -262,35 +200,26 @@ class App extends Component {
                   <img src="https://github.com/cameronmcefee.png" />
                 </div>
               </section>
-            </div>
-
-            <div class="outer-image">
-              <img
-                class="image-area"
-                src="https://octodex.github.com/images/murakamicat.png"
-              />
-              <section class="caption">
-                <p>#83</p>
-                <div class="name-pic">
-                  <p>the Murakamicat by</p>
-                  <img src="https://github.com/billyroh.png" />
-                </div>
-              </section>
-            </div>
-          </section>
-
-          <footer>
-            <div class="bottom-links">
-              <p>RSS</p>
-              <p>FAQ</p>
-            </div>
-            <i class="fab fa-github" />
-            <div class="copyright">
-              <p>© 2013 – 2018 GitHub, Inc.</p>
-              <p>All rights reserved.</p>
-            </div>
-          </footer>
-        </div>
+            </div>{' '}
+            */}{' '}
+            */}
+            {/* <div class="outer-image">
+                <img
+                  class="image-area"
+                  src="https://octodex.github.com/images/murakamicat.png"
+                />
+                <section class="caption">
+                  <p>#83</p>
+                  <div class="name-pic">
+                    <p>the Murakamicat by</p>
+                    <img src="https://github.com/billyroh.png" />
+                  </div>
+                </section>
+              </div>
+            </section> */}
+            <Footer />
+          </div>
+        </main>
       </>
     )
   }
